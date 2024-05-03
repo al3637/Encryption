@@ -1,6 +1,7 @@
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 alphabetLetters = len(alphabet)
 
+# Function to encrypt the user input
 def encrypt(user_input, key):
     cipher = ''
     for letter in user_input:
@@ -16,6 +17,7 @@ def encrypt(user_input, key):
                 cipher += alphabet[newIndex]
     return cipher
 
+# Function to decrypt the user input
 def decrypt(cipherText, key):
     plainText = ''
     for letter in cipherText:
@@ -31,6 +33,7 @@ def decrypt(cipherText, key):
                 plainText += alphabet[newIndex]
     return plainText
 
+# What will display on the screen first
 print()
 print('Ceaser Cypher')
 print()
@@ -38,6 +41,8 @@ print()
 print('Encrypt of Decrypt?')
 userInput = input('encrypt/decrypt: ').lower()
 print()
+
+# What will display if the user wants to encrypt their text
 if userInput == 'encrypt':
     print('Encryption Selected')
     print()
@@ -46,6 +51,7 @@ if userInput == 'encrypt':
     cipherText = encrypt(text, key)
     print(f'Ciphertext: {cipherText}')
 
+# What will display if the user wants to decrypt their text
 elif userInput == 'decrypt':
     print('Decryption Selected')
     print()
