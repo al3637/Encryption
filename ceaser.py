@@ -16,20 +16,20 @@ def encrypt(user_input, key):
                 cipher += alphabet[newIndex]
     return cipher
 
-def dencrypt(ciphertext, key):
-    plaintext = ''
-    for letter in ciphertext:
+def decrypt(cipherText, key):
+    plainText = ''
+    for letter in cipherText:
         letter = letter.lower()
         if letter != ' ':
             index = alphabet.find(letter)
             if index == -1:
-                plaintext += letter
+                plainText += letter
             else:
                 newIndex = index - key
                 if newIndex < 0:
                     newIndex += alphabetLetters
-                plaintext += alphabet[newIndex]
-    return plaintext
+                plainText += alphabet[newIndex]
+    return plainText
 
 print()
 print('Ceaser Cypher')
@@ -51,5 +51,5 @@ elif userInput == 'decrypt':
     print()
     key = int(input('Enter the key (1 through 26): '))
     text = input('Enter the message to decrypt: ')
-    plainText = encrypt(text, key)
+    plainText = decrypt(text, key)
     print(f'Plaintext: {plainText}')
